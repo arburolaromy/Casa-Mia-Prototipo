@@ -1,0 +1,178 @@
+/* Variables de Color */
+:root {
+    --primary: #c9a66b;    /* Ocre dorado */
+    --secondary: #d4ac7d;  /* Ocre claro */
+    --dark: #333333;       /* Gris oscuro */
+    --light: #fdfaf5;      /* Crema muy claro */
+    --text: #555555;
+    --white: #ffffff;
+}
+
+/* Reset de Estilos */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text);
+    line-height: 1.6;
+    background-color: var(--light);
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+/* Navegación */
+.navbar {
+    background: var(--white);
+    padding: 10px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.flex-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-img { height: 60px; }
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--dark);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover { color: var(--primary); }
+
+/* Grid Sistema */
+.grid-2, .grid-3 { display: grid; gap: 40px; }
+
+/* Hero Section */
+.hero-bakery {
+    height: 70vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('portada.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    color: var(--white);
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 30px;
+}
+
+/* Botones */
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.2s, background-color 0.3s;
+}
+
+.btn:hover { transform: translateY(-2px); }
+
+.btn-primary { background: var(--primary); color: white; }
+.btn-primary:hover { background-color: var(--secondary); }
+
+/* Secciones Generales */
+.section-title {
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    margin: 80px 0 20px;
+    font-size: 2.5rem;
+    color: var(--dark);
+}
+
+.section-subtitle {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 1.1rem;
+    color: var(--text);
+}
+
+/* Sección de Proceso */
+.process-section { padding: 80px 0; }
+.process-text h2 { font-family: 'Playfair Display', serif; margin-bottom: 20px; }
+.process-image img { border-radius: 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+
+/* Sección de Menú */
+.menu-section { padding-bottom: 80px; }
+.menu-item img { border-radius: 10px; margin-bottom: 15px; }
+.menu-item h3 { margin-bottom: 10px; }
+
+/* Sección de Contacto */
+.contact-section { padding-bottom: 80px; }
+.phone-number { font-size: 2rem; color: var(--primary); font-weight: bold; margin-bottom: 20px; }
+.social-links a {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #3b5998; /* Color de Facebook */
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+
+.contact-form form { display: flex; flex-direction: column; gap: 15px; }
+.contact-form input, .contact-form textarea {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 60px 0;
+    background: var(--dark);
+    color: var(--white);
+    margin-top: 60px;
+}
+
+.footer-logo { height: 70px; margin-bottom: 20px; }
+
+/* Responsive */
+@media (min-width: 768px) {
+    .grid-2 { grid-template-columns: 1fr 1fr; align-items: center; }
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 767px) {
+    .nav-links { display: none; }
+    .hero-bakery { height: 50vh; }
+    .phone-number { font-size: 1.5rem; }
+}
